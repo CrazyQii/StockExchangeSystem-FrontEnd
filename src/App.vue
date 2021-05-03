@@ -11,12 +11,26 @@
         <a-menu-item key="/">
           <router-link to="/">自选股</router-link>
         </a-menu-item>
-        <a-menu-item key="/about">
-          <router-link to="/about">About</router-link>
-        </a-menu-item>
         <a-menu-item key="/stocklist">
           <router-link to="/stocklist">股票列表</router-link>
         </a-menu-item>
+        <a-menu-item key="/bs">
+          <router-link to="/">买/卖</router-link>
+        </a-menu-item>
+        <a-menu-item key="/order">
+          <router-link to="/">查/撤</router-link>
+        </a-menu-item>
+        <a-sub-menu title="个人中心">
+          <a-menu-item>
+            <router-link to="/login">登录</router-link>
+          </a-menu-item>
+          <a-menu-item>
+            <router-link to="/register">注册</router-link>
+          </a-menu-item>
+          <a-menu-item>
+            <router-link to="/about">About</router-link>
+          </a-menu-item>
+        </a-sub-menu>
       </a-menu>
     </a-layout-header>
     <a-layout-content style="padding: 30px 50px 0px">

@@ -17,6 +17,12 @@ import Table from 'ant-design-vue/lib/table';
 import Tag from 'ant-design-vue/lib/tag';
 import Input from 'ant-design-vue/lib/input';
 import Pagination from 'ant-design-vue/lib/pagination';
+import Descriptions from 'ant-design-vue/lib/descriptions';
+import PageHeader from 'ant-design-vue/lib/page-header';
+import Form from 'ant-design-vue/lib/form';
+import Checkbox from 'ant-design-vue/lib/checkbox';
+import Select from 'ant-design-vue/lib/select';
+import Tooltip from 'ant-design-vue/lib/tooltip';
 
 import echarts from "echarts";
 
@@ -51,6 +57,17 @@ Vue.component(Input.Search.name, Input.Search);
 Vue.component(Input.TextArea.name, Input.TextArea);
 Vue.component(Input.Password.name, Input.Password);
 Vue.component(Pagination.name, Pagination);
+Vue.component(Descriptions.name, Descriptions);
+Vue.component(Descriptions.Item.name, Descriptions.Item);
+Vue.component(PageHeader.name, PageHeader);
+Vue.component(Form.name, Form);
+Vue.component(Form.Item.name, Form.Item);
+Vue.component(Checkbox.name, Checkbox);
+Vue.component(Select.name, Select);
+Vue.component(Select.Option.name, Select.Option);
+Vue.component(Select.OptGroup.name, Select.OptGroup);
+Vue.component(Tooltip.name, Tooltip);
+
 
 //定义全局变量
 Vue.prototype.$stock_api=stock_api;
