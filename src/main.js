@@ -2,7 +2,7 @@ import Vue from 'vue';
 import router from './router'
 import App from './App'
 // api接口
-import { stock_api } from './utils/api.js'  
+import { stock_api, user_info, risk_stock, order_api } from './utils/api.js'
 // ant-design-vue组件
 import 'ant-design-vue/dist/antd.css';
 import Button from 'ant-design-vue/lib/button';
@@ -23,6 +23,20 @@ import Form from 'ant-design-vue/lib/form';
 import Checkbox from 'ant-design-vue/lib/checkbox';
 import Select from 'ant-design-vue/lib/select';
 import Tooltip from 'ant-design-vue/lib/tooltip';
+import Message from 'ant-design-vue/lib/message';
+import Modal from 'ant-design-vue/lib/modal';
+import Drawer from 'ant-design-vue/lib/drawer';
+import Statistic from 'ant-design-vue/lib/statistic';
+import Row from 'ant-design-vue/lib/row';
+import Col from 'ant-design-vue/lib/col';
+import FormModel from 'ant-design-vue/lib/form-model';
+import Tabs from 'ant-design-vue/lib/tabs';
+import Card from 'ant-design-vue/lib/card';
+import DatePicker from 'ant-design-vue/lib/date-picker';
+import AutoComplete from 'ant-design-vue/lib/auto-complete';
+import InputNumber from 'ant-design-vue/lib/input-number';
+import Popover from 'ant-design-vue/lib/popover';
+
 
 import echarts from "echarts";
 
@@ -67,11 +81,39 @@ Vue.component(Select.name, Select);
 Vue.component(Select.Option.name, Select.Option);
 Vue.component(Select.OptGroup.name, Select.OptGroup);
 Vue.component(Tooltip.name, Tooltip);
+Vue.component(Drawer.name, Drawer);
+Vue.component(Statistic.name, Statistic);
+Vue.component(Statistic.Countdown.name, Statistic.Countdown);
+Vue.component(Row.name, Row);
+Vue.component(Col.name, Col);
+Vue.component(FormModel.name, FormModel);
+Vue.component(FormModel.Item.name, FormModel.Item);
+Vue.component(Tabs.name, Tabs);
+Vue.component(Tabs.TabPane.name, Tabs.TabPane);
+Vue.component(Tabs.TabContent.name, Tabs.TabContent);
+Vue.component(Card.name, Card);
+Vue.component(DatePicker.name, DatePicker);
+Vue.component(DatePicker.RangePicker.name, DatePicker.RangePicker);
+Vue.component(DatePicker.MonthPicker.name, DatePicker.MonthPicker);
+Vue.component(DatePicker.WeekPicker.name, DatePicker.WeekPicker);
+Vue.component(AutoComplete.name, AutoComplete);
+Vue.component(AutoComplete.Option.name, AutoComplete.Option);
+Vue.component(AutoComplete.OptGroup.name, AutoComplete.OptGroup);
+Vue.component(InputNumber.name, InputNumber);
+Vue.component(Popover.name, Popover);
 
+Vue.use(Modal);
+
+
+Vue.prototype.$message = Message;
+Vue.prototype.$confirm = Modal.confirm;
 
 //定义全局变量
-Vue.prototype.$stock_api=stock_api;
-Vue.prototype.$echarts=echarts;
+Vue.prototype.$stock_api = stock_api;
+Vue.prototype.$user_info = user_info;
+Vue.prototype.$risk_stock = risk_stock;
+Vue.prototype.$order_api = order_api;
+Vue.prototype.$echarts = echarts;
 
 Vue.config.productionTip = false;
 

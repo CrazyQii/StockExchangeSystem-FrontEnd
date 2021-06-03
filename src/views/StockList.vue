@@ -4,6 +4,7 @@
     <div style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem">
       股市列表
     </div>
+    
     <!-- 表格 -->
     <a-table
       :columns="columns"
@@ -43,10 +44,6 @@ const columns = [
   {
     title: "市场",
     dataIndex: "market",
-    filters: [
-      { text: "深圳证券交易所", value: "深圳证券交易所" },
-      { text: "上海证券交易所", value: "上海证券交易所" },
-    ],
     width: "20%",
   },
   {
@@ -73,8 +70,7 @@ export default {
     this.getData(this.pagination.pageSize, this.pagination.current);
   },
   methods: {
-    handleTableChange(pagination, filters, sorter) {
-      // console.log(filters)
+    handleTableChange(pagination) {
       const pager = { ...this.pagination };
       pager.current = pagination.current;
       this.pagination = pager;

@@ -9,7 +9,8 @@ axios.interceptors.request.use(
   config => {
     config.data = JSON.stringify(config.data);
     config.headers = {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json',
+      'token': localStorage.token
     }
     return config;
   },
@@ -20,6 +21,7 @@ axios.interceptors.request.use(
 
 //响应拦截器即异常处理
 axios.interceptors.response.use(response => {
+  // console.log(response)
   return response
 }, err => {
   if (err && err.response) {
@@ -97,14 +99,14 @@ export function get(url, params = {}) {
  * @returns {Promise}
  */
 
-export function post(url,data = {}){
-  return new Promise((resolve,reject) => {
-    axios.post(url,data)
-         .then(response => {
-           resolve(response.data);
-         },err => {
-           reject(err)
-         })
+export function post(url, data = {}) {
+  return new Promise((resolve, reject) => {
+    axios.post(url, data)
+      .then(response => {
+        resolve(response.data);
+      }, err => {
+        reject(err)
+      })
   })
 }
 
@@ -115,13 +117,33 @@ export function post(url,data = {}){
  * @returns {Promise}
  */
 
-export function put(url,data = {}){
-  return new Promise((resolve,reject) => {
-    axios.put(url,data)
-          .then(response => {
-            resolve(response.data);
-          },err => {
-            reject(err)
-          })
+export function put(url, data = {}) {
+  return new Promise((resolve, reject) => {
+    axios.put(url, data)
+      .then(response => {
+        resolve(response.data);
+      }, err => {
+        reject(err)
+      })
+  })
+}
+
+/**
+ * 封装remove请求
+ * @param url
+ * @param data
+ * @returns {Promise}
+ */
+
+ export function remove(url, params = {}) {
+  return new Promise((resolve, reject) => {
+    axios.delete(url, {
+      params: params
+    })
+      .then(response => {
+        resolve(response.data);
+      }, err => {
+        reject(err)
+      })
   })
 }

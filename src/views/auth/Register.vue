@@ -1,10 +1,5 @@
 <template>
   <div>
-    <a-page-header
-      style="border: 1px solid rgb(235, 237, 240)"
-      title="交易系统账户注册"
-      @back="() => $router.go(-1)"
-    />
     <a-form
       id="components-form-normal-register"
       :form="form"
@@ -136,7 +131,20 @@ export default {
       e.preventDefault();
       this.form.validateFieldsAndScroll((err, values) => {
         if (!err) {
-          console.log("Received values of form: ", values);
+          let data = {
+            phone: values['phone'],
+            password: values['password'],
+            nickname: values['nickname']
+          }
+          console.log("Received values of form: ", data);
+          this.$user_info.register(data).then((res) => {
+            // 请求后端数据
+            if (res.code == 200) {
+              this.$message.success('注册成功！')
+            } else {
+              this.$message.error(res.msg)
+            }
+          });
         }
       });
     },
