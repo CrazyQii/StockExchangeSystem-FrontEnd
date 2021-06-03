@@ -108,7 +108,7 @@
         :visible="sellVisible"
         @close="onCloseSellDrawer"
       >
-        <Sell :code="code"></Sell>
+        <Sell :code="code" :user_info="user_info"></Sell>
       </a-drawer>
     </div>
   </div>

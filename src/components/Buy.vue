@@ -96,12 +96,13 @@ export default {
   name: "Buy",
   props: ["code", "user_info"],
   mounted() {
+    this.getStock(this.code)
     this.getOrderBook(this.code);
-    setTimeout(function(){}, 2000)
     this.getTrade(this.code);
   },
   data() {
     return {
+      stock_data: {},
       form: {
         layout: "inline",
         price: "",
@@ -122,6 +123,16 @@ export default {
     };
   },
   methods: {
+    getStock(code) {
+      // 股票信息数据
+      this.$stock_api.stock_company(code).then((res) => {
+        if (res.code == 200) {
+          this.stock_data = res.data;
+        } else {
+          console.log(res);
+        }
+      });
+    },
     // =============
     // 数据获取
     // =============
@@ -149,9 +160,9 @@ export default {
             return 
           }
           this.trade_data["price"] = res.data["p"];
-          this.form["hprice"] =
-            Math.floor(Number(res.data["yc"] * 0.9) * 100) / 100;
           this.form["lprice"] =
+            Math.floor(Number(res.data["yc"] * 0.9) * 100) / 100;
+          this.form["hprice"] =
             Math.floor(Number(res.data["yc"] * 1.1) * 100) / 100;
           console.log(this.trade_data);
         } else {
@@ -178,7 +189,27 @@ export default {
         ) * 100;
     },
     onSubmit() {
-
+      let data = {
+        account_id: this.user_info.id,
+        stock_code: this.code,
+        stock_name: this.stock_data.stockname,
+        direction: 'buy',
+        status: 1,
+        volume: this.form.volume,
+        order_price: this.form.price,
+        price: this.form.price
+      }
+      this.$order_api.add_order(data).then((res) => {
+        if (res.code == 200) {
+          this.$message.success("已挂单成功！");
+          this.$router.push({
+            path: `/orderlist`,
+          });
+        } else {
+          console.log(res)
+          this.$message.error("交易失败" + res.msg);
+        }
+      })
     },
   },
 };

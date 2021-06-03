@@ -1,7 +1,7 @@
 <template>
   <a-layout id="main-layout" class="layout">
     <a-layout-header>
-      <div class="logo" />
+      <div class="logo">模拟股票交易系统</div>
       <a-menu
         theme="dark"
         mode="horizontal"
@@ -11,11 +11,11 @@
         <a-menu-item key="/" v-if="user_info.role == 'user'">
           <router-link to="/">自选股</router-link>
         </a-menu-item>
-        <a-menu-item key="/stocklist" v-if="user_info.role == 'user'">
-          <router-link to="/stocklist">股票列表</router-link>
-        </a-menu-item>
         <a-menu-item key="/orderlist" v-if="user_info.role == 'user'">
           <router-link to="/orderlist">委托列表</router-link>
+        </a-menu-item>
+        <a-menu-item key="/stocklist" v-if="user_info.role == 'user'">
+          <router-link to="/stocklist">我的持仓</router-link>
         </a-menu-item>
         <a-menu-item key="/accountlist" v-if="user_info.role == 'admin'">
           <router-link to="/accountlist">信息管理</router-link>
@@ -121,10 +121,13 @@ export default {
 
 <style>
 #main-layout .logo {
-  width: 120px;
+  width: 10rem;
   height: 31px;
-  background: rgba(163, 25, 25, 0.2);
-  margin: 16px 24px 16px 0;
+  color: whitesmoke;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  /* margin: 16px 24px 16px 0; */
   float: left;
 }
 </style>

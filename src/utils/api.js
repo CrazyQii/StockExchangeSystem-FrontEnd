@@ -197,7 +197,8 @@ export const user_info = {
      */
     add_stock(paramObj) {
         return post('/quote/', paramObj)
-    }
+    },
+
 }
 
 export const risk_stock = {
@@ -209,6 +210,10 @@ export const risk_stock = {
      */
     risk_stock(paramObj) {
         return get('/risk/stocklist', paramObj)
+    },
+
+    risk_stock_one(paramObj) {
+        return get('/risk/stock', paramObj)
     },
 
     add_risk_stock(paramObj) {
@@ -235,6 +240,12 @@ export const order_api = {
     },
     add_order(paramObj) {
         return post('/order/', paramObj)
+    },
+    account_order(paramObj) {
+        return get('/order/account/orderlist', paramObj)
+    },
+    account_order_one(paramObj) {
+        return get('/order/account/detail', paramObj)
     },
 }
 

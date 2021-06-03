@@ -1,6 +1,6 @@
 <template>
   <div>
-      ppp
+      模拟股票交易系统-HanLinqi
   </div>
 </template>
 

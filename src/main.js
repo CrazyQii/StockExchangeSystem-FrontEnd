@@ -36,6 +36,8 @@ import DatePicker from 'ant-design-vue/lib/date-picker';
 import AutoComplete from 'ant-design-vue/lib/auto-complete';
 import InputNumber from 'ant-design-vue/lib/input-number';
 import Popover from 'ant-design-vue/lib/popover';
+import Spin from 'ant-design-vue/lib/spin';
+import Alert from 'ant-design-vue/lib/alert';
 
 
 import echarts from "echarts";
@@ -101,6 +103,8 @@ Vue.component(AutoComplete.Option.name, AutoComplete.Option);
 Vue.component(AutoComplete.OptGroup.name, AutoComplete.OptGroup);
 Vue.component(InputNumber.name, InputNumber);
 Vue.component(Popover.name, Popover);
+Vue.component(Spin.name, Spin);
+Vue.component(Alert.name, Alert);
 
 Vue.use(Modal);
 
