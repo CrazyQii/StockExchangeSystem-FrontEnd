@@ -480,6 +480,6 @@ export default {
 #DayChart {
   min-width: 800px;
   width: 1200px;
-  height: 600px;
+  height: 550px;
 }
 </style>

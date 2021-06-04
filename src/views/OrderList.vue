@@ -204,7 +204,10 @@ export default {
     },
     deleteOrder(id) {
       // 删除数据
-      let data = { id: id };
+      let data = { 
+        id: id,
+        account_id: this.user_info.id
+      };
       this.$order_api.delete_order(data).then((res) => {
         if (res.code == 200) {
           this.$message.success("删除成功！");
