@@ -1,24 +1,67 @@
-# client
+# 模拟股票交易系统-前端
 
-## Project setup
-```
-npm install
-```
+### 项目说明
 
-### Compiles and hot-reloads for development
+调用实际的金融数据接口，模拟股票交易
+
+### 编译开发
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 上线部署
+
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+### 普通用户界面
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### 登录和注册
+
+![登录](./img/系统界面图-登录.png)
+
+![注册](./img/系统界面图-注册.png)
+
+#### 用户自选股
+
+![自选股](./img/系统界面图-自选股.png)
+
+#### 委托订单
+
+![委托订单列表](./img/系统界面图-委托订单列表.png)
+
+#### 行情K线图
+
+![K线图](./img/系统界面图-K线图.png)
+
+#### 用户持股
+
+![我的持仓](./img/系统界面图-我的持仓.png)
+
+#### 买卖委托交易
+
+![买卖委托](./img/系统界面-买卖委托.png)
+
+#### 用户个人信息
+
+![用户信息](./img/系统界面图-用户信息.png)
+
+### 管理员界面
+
+#### 用户管理
+
+![用户列表](./img/系统界面-用户列表.png)
+
+#### 股票风控预警
+
+![风控管理](./img/系统界面图-风控管理.png)
+
+### 未完成功能
+
+- 普通用户
+  - 个人持仓（仅有界面）
+  - 个人交易收益
+- 管理员
+  - 删除注册账户
