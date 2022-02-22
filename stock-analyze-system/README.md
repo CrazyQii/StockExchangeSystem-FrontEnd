@@ -1,24 +1,18 @@
 # stock-analyze-system
 
-## Project setup
+## 依赖下载
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 开发热编译
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 生成部署文件
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[demo](121.41.169.208:8001)
