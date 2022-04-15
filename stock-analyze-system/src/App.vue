@@ -15,11 +15,14 @@
         <a-menu-item key="/stock-list" v-if="user_info.role == 'user'">
           <router-link to="/stock-list">股票列表</router-link>
         </a-menu-item>
-        <a-menu-item key="/stock-note" v-if="user_info.role == 'user'">
-          <router-link to="/stock-note">股市风向标</router-link>
+        <a-menu-item key="/stock-rank" v-if="user_info.role == 'user'">
+          <router-link to="/stock-rank">涨跌榜</router-link>
         </a-menu-item>
         <a-menu-item key="/stock-tiger" v-if="user_info.role == 'user'">
           <router-link to="/stock-tiger">龙虎榜</router-link>
+        </a-menu-item>
+        <a-menu-item key="/stock-note" v-if="user_info.role == 'user'">
+          <router-link to="/stock-note">股市风向标</router-link>
         </a-menu-item>
         <!-- 公共信息 -->
         <a-sub-menu v-if="showLR" title="个人中心">

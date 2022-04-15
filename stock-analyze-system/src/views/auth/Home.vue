@@ -37,15 +37,12 @@ const treeData = [
     ],
   },
   {
-    title: '股市风向标',
+    title: '涨跌排行榜',
     key: '0-2',
     children: [
-      { title: '停牌', key: '0-2-0' },
-      { title: '深交易所公告', key: '0-2-1' },
-      { title: '上交易所公告', key: '0-2-2' },
-      { title: '周涨跌排行榜', key: '0-2-3' },
-      { title: '月涨跌排行榜', key: '0-2-4' },
-    ],
+      { title: '周涨跌排行榜', key: '0-2-0' },
+      { title: '月涨跌排行榜', key: '0-2-1' },
+    ]
   },
   {
     title: '龙虎榜',
@@ -59,11 +56,20 @@ const treeData = [
     ],
   },
   {
-    title: '用户信息',
+    title: '股市风向标',
     key: '0-4',
     children: [
-      { title: '个人信息查看', key: '0-4-0' },
-      { title: '登出', key: '0-4-1' },
+      { title: '停牌', key: '0-4-0' },
+      { title: '深交易所公告', key: '0-4-1' },
+      { title: '上交易所公告', key: '0-4-2' }
+    ],
+  },
+  {
+    title: '用户信息',
+    key: '0-5',
+    children: [
+      { title: '个人信息查看', key: '0-5-0' },
+      { title: '登出', key: '0-5-1' },
     ],
   },
 ];

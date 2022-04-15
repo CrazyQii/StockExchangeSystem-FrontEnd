@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- header -->
     <a-row type="flex">
       <a-col flex="40%">
         <!-- 树状选择条 -->
@@ -17,26 +18,32 @@
           </a-tree-select-node>
         </a-tree-select>
       </a-col>
-      <a-col flex="40%" style="margin-left:5rem;">
+      <a-col flex="25%" style="margin-left:5rem;">
         <!-- 搜索自选股对话框 -->
         <div>
           <span>股票代码：</span>
           <a-auto-complete
             v-model="stockValue"
-            style="width: 50%"
+            style="width: 70%"
             placeholder="股票代码"
             @search="onSearchStock"
           /><a-spin :spinning="searchLoading"/>
           </div>
       </a-col>
-      <a-col flex="auto">
+      <a-col flex="10%">
         <a-button type="primary" @click="btnSearchStock">
           搜索
         </a-button>
       </a-col>
+      <a-col flex="auto">
+        <a-button type="danger" @click="navAdvice">
+          股票推荐
+        </a-button>
+      </a-col>
     </a-row>
 
-    <!-- 表格数据展示 -->
+    <!-- content -->
+    <!-- 查询表格数据展示 -->
     <a-table
       :columns="columns"
       :data-source="data"
@@ -292,6 +299,13 @@ export default {
       // 跳转路由
       this.$router.push({
         path: `/detail/${code}`,
+      });
+    },
+
+    navAdvice() {
+      // 跳转建议页面
+      this.$router.push({
+        path: `/stock-advice`,
       });
     },
 

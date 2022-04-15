@@ -45,14 +45,33 @@ const routes = [
     component: () => import('../views/stock/Detail.vue'),
   },
   {
+    path: '/stock-rank',
+    name: 'Ranks',
+    component: () => import('../views/stock/Ranks.vue'),
+    meta: {
+      keepAlive: true // 需要缓存
+    }
+  },
+  {
     path: '/stock-note',
     name: 'Note',
     component: () => import('../views/stock/Note.vue'),
+    meta: {
+      keepAlive: true // 需要缓存
+    }
   },
   {
     path: '/stock-tiger',
     name: 'TigerStock',
     component: () => import('../views/stock/StockTiger.vue'),
+    // meta: {
+    //   keepAlive: true // 需要缓存
+    // }
+  },
+  {
+    path: '/stock-advice',
+    name: 'Advice',
+    component: () => import('../views/stock/Advice.vue'),
     // meta: {
     //   keepAlive: true // 需要缓存
     // }

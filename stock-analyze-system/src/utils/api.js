@@ -138,6 +138,30 @@ export const stock_api = {
      */
     get_stock_hist_realtimedeal(code, level) {
         return get('/stock/hist/timedeal/' + code + '/' + level)
+    },
+
+    /** 
+     * 连续上涨接口
+     * 名称：get_stock_lxsz
+     */
+     get_stock_lxsz() {
+        return get('/stock/lxsz')
+    },
+
+    /** 
+     * 连续下跌接口
+     * 名称：get_stock_lxxd
+     */
+     get_stock_lxxd() {
+        return get('/stock/lxxd')
+    },
+
+    /** 
+     * 本周强势股票接口
+     * 名称：get_stock_lxxd
+     */
+     get_stock_bzqsg() {
+        return get('/stock/bzqsg')
     }
 }
 
